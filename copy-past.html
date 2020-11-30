@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi JS - Copy / Past </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="d-flex justify-content-between mb-3">
+
+            <div class="logo-acs"><img
+                    src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_acs_noir.png"
+                    style="max-height: 66px; max-width: 200px;" />
+            </div>
+
+
+            <div class="logo-ofp"> <img src="https://www.onlineformapro.com/wp-content/uploads/2020/01/logo-03.svg"
+                    style="max-height: 66px; max-width: 200px;" />
+            </div>
+
+        </div>
+
+        <div class="jumbotron">
+            <h2> [Défi] Copier un élément</h2> <br />
+            <b>Objectif :</b> Copier le contenu de la zone de texte A grace a un bouton COPIER et lorsque vous vous
+            rendez dans la zone de texte B et que vous faites une ctrl+V le contenu alors copier de la premiere zone
+            sera collé dans la seconde.<br /> <br />
+
+
+
+
+
+        </div>
+        <h2>Résultat</h2>
+        <div id="resultat">
+            <textarea name="" id="zoneA" cols="30" rows="10"></textarea>
+            <button id="copier">Copier</button>
+            <textarea name="" id="zoneB" cols="30" rows="10"></textarea>
+            <button id="coller">Coller</button>
+        </div>
+
+    </div>
+
+    <script>
+
+
+
+        const copier = document.getElementById("copier");
+        const coller = document.getElementById("coller");
+        copier.addEventListener("click", function () {
+            var textecopie = document.getElementById("zoneA");
+            textecopie.select();
+            document.execCommand("copy");
+        });
+
+
+        coller.addEventListener("click", function () {
+            navigator.clipboard.readText().then(clipText =>
+            document.getElementById("zoneB").innerText = clipText);
+           ;
+        });
+
+  
+
+        
+    </script>
+
+</body>
+
+</html>

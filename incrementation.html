@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi JS - Convertisseur d'unités de temps</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between mb-3">
+
+            <div class="logo-acs"><img
+                    src="https://www.accesscodeschool.fr/wp-content/uploads/2018/10/logo_acs_noir.png"
+                    style="max-height: 66px; max-width: 200px;" />
+            </div>
+
+
+            <div class="logo-ofp"> <img src="https://www.onlineformapro.com/wp-content/uploads/2020/01/logo-03.svg"
+                    style="max-height: 66px; max-width: 200px;" />
+            </div>
+
+        </div>
+
+        <div class="jumbotron">
+          <h2> [Défi] Cliquez sur le bouton pour incrémenter</h2> <br/>
+<b>Objectif :</b> À chaque clic de l'utilisateur sur le bouton « Increment! », le contenu de la div « cntClic » s'incrémente de 1. <br/> <br/>
+
+Déclarez une variable pour le compteur, et utilisez des « getElementById » pour récupérer les deux divs et les stocker dans des constantes (conformément à la norme ES6 pour  la déclaration de variables)  :<br/><br/>
+
+const myBtn = document.getElementById('myBtn') ;<br/>
+const cntClic = document.getElementById('cntClic');<br/><br/>
+
+var nbClic = 0;<br/><br/>
+ 
+
+<b>Consigne :</b> n'utilisez pas le paramètre « onclick » dans le HTML, utilisez un « addEventListener » sur « myBtn » pour développer la fonction. Ajoutez un « console.log » sur « nbClic » dans la fonction afin de pouvoir contrôler le résultat dans la console.
+
+ 
+        </div>
+        <h2>Résultat</h2>
+        <div id="resultat">
+            <button id="myBtn">Increment!</button>
+            <p id="cntClic">Click on the button to increment!</p>  
+        </div>
+
+    </div>
+    <script>
+const myBtn = document.getElementById("myBtn") ;
+const cntClic = document.getElementById('cntClic');
+var nbClic = 0;
+
+myBtn.addEventListener("click", function() {
+  nbClic++;
+  cntClic.innerHTML = "You clicked " + nbClic + " times.";
+  console.log('You clicked ' + nbClic + " times.");
+});
+    </script>
+</body>
+
+</html>

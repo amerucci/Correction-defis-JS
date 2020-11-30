@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi JS - Show / Hide</title>
+</head>
+
+<style>
+    #menu {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    .show {
+        height: 150px !important;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 1s;
+    }
+</style>
+
+
+<body>
+    <button id="show">VOIR</button>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Link 01</a></li>
+            <li><a href="#">Link 02</a></li>
+            <li><a href="#">Link 03</a></li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById("show").addEventListener("click", Montre );
+
+
+        function Montre(){
+            let menu = document.getElementById("menu");
+            menu.classList.toggle("show");     
+        }
+    </script>
+
+</body>
+
+</html>
